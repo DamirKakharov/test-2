@@ -1,5 +1,12 @@
 var url = require("is-url");
 console.log("start");
-throw new Error("asd");
+
+const delay = (ms) => new Promise((res) => setTimeout(() => res(ms), ms));
+(async () => {
+  for (let i = 0; i < 100; i++) {
+    await delay(1000);
+    console.log("Log ");
+  }
+})();
 
 console.log("http://google.com, isURL? ", url("http://google.com"));
